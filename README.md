@@ -1,4 +1,4 @@
-# tour _&_travel
+# tour \_&\_travel
 
 # **_3 Model_**
 
@@ -32,5 +32,4 @@ review
 rating
 tourName -> ref
 user -> ref
-
 }
