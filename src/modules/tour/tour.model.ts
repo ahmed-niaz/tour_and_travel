@@ -17,6 +17,10 @@ const tourSchema = new Schema({
     type: Number,
     required: true,
   },
+  availableSeats: {
+    type: Number,
+    required: true,
+  },
   coverImage: {
     type: String,
     required: true,
