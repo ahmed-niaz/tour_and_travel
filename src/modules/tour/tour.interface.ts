@@ -5,7 +5,8 @@ export interface ITour {
   price: number;
   coverImage: string;
   images: string[];
-  startDate: Date;
-  startLocation: string[];
+  startDates: Date[];
+  startLocation: { type: string };
+  locations: string[];
   slug: string;
 }

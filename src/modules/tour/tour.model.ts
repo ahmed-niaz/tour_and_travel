@@ -1,5 +1,4 @@
 import { model, Schema } from 'mongoose';
-import { ITour } from './tour.interface';
 
 const tourSchema = new Schema({
   name: {
@@ -23,12 +22,12 @@ const tourSchema = new Schema({
     required: true,
   },
   images: [String],
-  startDate: { type: Date },
+  startDates: [Date],
   startLocation: { type: String },
   locations: [String],
   slug: String,
 });
 
-const Tour = model<ITour>('Tour', tourSchema);
+const Tour = model('Tour', tourSchema);
 
 export default Tour;

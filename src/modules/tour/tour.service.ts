@@ -3,19 +3,16 @@ import Tour from './tour.model';
 
 const createTour = async (payload: ITour): Promise<ITour> => {
   const result = await Tour.create(payload);
-
   return result;
 };
 
 const getTours = async () => {
   const result = await Tour.find();
-
   return result;
 };
 
 const getSingleTour = async (id: string) => {
   const result = await Tour.findById(id);
-  console.log(result);
   return result;
 };
 
