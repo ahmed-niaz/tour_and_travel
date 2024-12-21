@@ -1,8 +1,9 @@
 import express, { Application, Request, Response } from 'express';
 import userRouter from './modules/user/user.router';
 import tourRouter from './modules/tour/tour.router';
-import { StatusCodes } from 'http-status-codes';
+// import { StatusCodes } from 'http-status-codes';
 import bookingRouter from './modules/booking/booking.router';
+import { globalErrorHandler } from './middlewares/globalErrorHandler';
 
 const app: Application = express();
 // middleware
@@ -19,11 +20,13 @@ app.get('/', async (req: Request, res: Response) => {
   });
 });
 
-app.use((err: any, req: Request, res: Response) => {
-  console.log('error from app ts', err);
-  res
-    .status(StatusCodes.INTERNAL_SERVER_ERROR)
-    .json({ success: false, message: err.message, error: err });
+app.use(globalErrorHandler);
+
+app.use('*', (req: Request, res: Response) => {
+  res.status(404).json({
+    status: false,
+    message: `Route not found`,
+  });
 });
 
 export default app;

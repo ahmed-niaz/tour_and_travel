@@ -9,5 +9,5 @@ export interface ITour {
   startLocation: { type: string };
   locations: string[];
   slug: string;
-  availableSeats: number
+  availableSeats: number;
 }
